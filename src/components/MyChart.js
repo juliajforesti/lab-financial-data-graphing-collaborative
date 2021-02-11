@@ -103,7 +103,7 @@ class MyChart extends React.Component {
   render() {
     return (
       <div>
-        <div className="d-flex">
+        <div className="d-flex m-2">
           <input
             name="startDate"
             onChange={this.handleChange}
@@ -123,6 +123,14 @@ class MyChart extends React.Component {
             <option>USD</option>
             <option>EUR</option>
           </select>
+          <div>
+            <span className="m-2 border">
+              Min: {Math.min(...this.state.chartData).toFixed(2)}
+            </span>
+            <span className="m-2 border">
+              Max: {Math.max(...this.state.chartData).toFixed(2)}
+            </span>
+          </div>
         </div>
         <canvas id="myChart"></canvas>
       </div>
